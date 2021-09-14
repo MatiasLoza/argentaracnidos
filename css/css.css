@@ -565,7 +565,7 @@ legend {
     width: 100%;
 }
 .despedida {
-    background-image: url(/image/salticidae2.jpg);
+    background-image: url(../image/salticidae2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
