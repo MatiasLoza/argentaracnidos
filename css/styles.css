@@ -1,0 +1,85 @@
+/* CREADOR  */
+.main__creador {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.main__creador .subtitulo {
+  margin: 2rem auto;
+  text-align: center;
+  background-color: rgba(140, 212, 45, 0.493);
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.main__creador__texto {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main__creador__texto p {
+  line-height: 2;
+}
+
+.main__creador__texto p .coderhouse {
+  color: black;
+  font-family: "DN sans";
+  font-weight: 1000;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-style: oblique;
+}
+
+.main__creador__gracias {
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.main__creador .gracias {
+  display: block;
+  font-family: var(--fuenteLogo);
+  font-size: 5rem;
+  color: var(--colorSecundario);
+  text-transform: uppercase;
+}
+
+.main__creador .despedida {
+  background-image: url(../image/salticidae2.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 30rem;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* sass */
+.uno-parrafo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: aquamarine;
+}
+
+.dos-parrafo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: aquamarine;
+}
+
+.tres-parrafo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: aquamarine;
+}
+
+.cuatro-parrafo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: aquamarine;
+}
+/*# sourceMappingURL=styles.css.map */
