@@ -628,7 +628,7 @@ legend {
     display: block;
     font-family: var(--fuenteLogo);
     font-size: 5rem;
-    color:var(--colorSecundario);
+    color:  rgb(98, 12, 116);
     text-transform: uppercase;
 }
 /* Footer */
