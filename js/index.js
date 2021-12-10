@@ -1,9 +1,16 @@
+//variable incremental para asignar ids unicos a los usuarios.
 let id = 0;
+
+//variable temporal que se utiliza para el ciclo de crear usuarios o ver los creados.
 let creacion = "1";
+// arrray que va a almacenar los usuarios.
 const usuarios = [];
+// variable que se utiliza para validar datos.
 let objectToValidate;
 
-class Persona {
+
+/* Se crea la clase que se utilizara para crear los usuarios */
+class Usuario {
 
     constructor() {
         this.usuario;
@@ -62,10 +69,12 @@ class Persona {
     }
 }
 
-
+/*funcion que se encarga de crear usuarios, y asignarle valores, por intermedio de prompt, utilizando la transaccionalidad
+ es decir que si en alguno de los campos el usuario a registrar ingresa un dato no valido, el usuario no se crearia, y arrojaria un error*/
+ 
 function crearUsuario() {
     try {
-        const nuevoUsuario = new Persona();
+        const nuevoUsuario = new Usuario();
         nuevoUsuario.setUsuario(validateObject(prompt("Por favor ingrese su usuario")));
         nuevoUsuario.setContraseña(validateObject(prompt("Por favor ingrese su contraseña")));
         nuevoUsuario.setNombre(validateString(validateObject(prompt("por favor ingrese su nombre (utilice solo letras)"))));
@@ -80,7 +89,7 @@ function crearUsuario() {
 }
 
 
-
+//ciclo para consultarle al usuario si quiere crear un usuario, o listar los que estan creados.
 while (creacion == "1" || creacion == "2") {
     switch (creacion) {
         case "1":
@@ -97,7 +106,7 @@ while (creacion == "1" || creacion == "2") {
 
 
 
-
+//funcion que valida que los datos ingresados sean validos.
 function validateObject(objectToValidate) {
     if (objectToValidate == null || objectToValidate == undefined || objectToValidate == 0) {
         console.log(objectToValidate);
@@ -111,7 +120,7 @@ function validateObject(objectToValidate) {
     throw new Error("ingrese los datos correctamente")
 }
 
-
+// funcion que valida datos como nombre y apellido, a los fines de que no puedan incluir numeros en  ese campo.
 function validateString(objectToValidate) {
     if (objectToValidate.includes("1") || objectToValidate.includes("2") || objectToValidate.includes("3") || objectToValidate.includes("4") || objectToValidate.includes("5") || objectToValidate.includes("6") || objectToValidate.includes("7") || objectToValidate.includes("8") || objectToValidate.includes("9") || objectToValidate.includes("0")) {
         alert("Por favor ingrese los datos utilizando letras");
