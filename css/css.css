@@ -449,6 +449,9 @@ p {
 
 /* CONTACTO */
 
+.cuerpo {
+    background-color: black;
+}
 .main__formulario {
     background-color: black;
     padding: 2rem;
