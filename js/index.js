@@ -1,115 +1,62 @@
-//variable incremental para asignar ids unicos a los usuarios.
-let id = 0;
-
-//variable temporal que se utiliza para el ciclo de crear usuarios o ver los creados.
+import { usuarioDTO } from "./DTOUsuario.js";
+import { Usuario } from "./Usuario.js";
+import { Usuarios } from "./Usuarios.js";
+let id;
+//variable temporal que se utiliza para el ciclo de crear Usuarios o ver los creados.
 let creacion = "1";
-// arrray que va a almacenar los usuarios.
-const usuarios = [];
-// variable que se utiliza para validar datos.
-let objectToValidate;
 
+const usuarios = new Usuarios();
 
-/* Se crea la clase que se utilizara para crear los usuarios */
-class Usuario {
-
-    constructor() {
-        this.usuario;
-        this.contraseña;
-        this.nombre;
-        this.apellido;
-        this.edad;
-        this.id;
-        id++;
-    }
-
-    getUsuario() {
-        return this.usuario;
-    }
-
-    setUsuario(usuario) {
-        this.usuario = usuario;
-    }
-
-    setContraseña(contraseña) {
-        this.contraseña = contraseña;
-    }
-    getContraseña() {
-        return this.contraseña;
-    }
-    getNombre() {
-        return this.nombre;
-    }
-    setNombre(nombre) {
-        this.nombre = nombre;
-    }
-
-    getApellido() {
-        return this.apellido;
-    }
-    setApellido(apellido) {
-        this.apellido = apellido;
-    }
-    getEdad() {
-        return this.edad;
-    }
-    setEdad(edad) {
-        this.edad = edad;
-    }
-
-    setID(id) {
-        this.id = id;
-    }
-
-    getID() {
-        return this.id;
-
-    }
-    toString() {
-        return `Usuario= ${this.usuario} \nid= ${this.id} \nnombre= ${this.nombre} \napellido= ${this.apellido} \nedad= ${this.edad} años `
-    }
-}
-
-/*funcion que se encarga de crear usuarios, y asignarle valores, por intermedio de prompt, utilizando la transaccionalidad
- es decir que si en alguno de los campos el usuario a registrar ingresa un dato no valido, el usuario no se crearia, y arrojaria un error*/
+/*funcion que se encarga de crear Usuarios, y asignarle valores, por intermedio de prompt, utilizando la transaccionalidad
+ es decir que si en alguno de los campos el Usuario a registrar ingresa un dato no valido, el Usuario no se crearia, y arrojaria un error*/
+ creacion = prompt("Por favor ingrese 1 para registrar otro Usuario, 2 para ver los usuarios creados");
  
-function crearUsuario() {
-    try {
-        const nuevoUsuario = new Usuario();
-        nuevoUsuario.setUsuario(validateObject(prompt("Por favor ingrese su usuario")));
-        nuevoUsuario.setContraseña(validateObject(prompt("Por favor ingrese su contraseña")));
-        nuevoUsuario.setNombre(validateString(validateObject(prompt("por favor ingrese su nombre (utilice solo letras)"))));
-        nuevoUsuario.setApellido(validateString(validateObject(prompt("pro favor ingrtese su apellido (utilice solo letras)"))));
-        nuevoUsuario.setEdad(prompt("Por favor ingrese su edad"));
-        nuevoUsuario.setID(id);
-        alert("Su usuario fue creado correctamente");
-        usuarios.push(nuevoUsuario);
-    } catch {
-        throw new Error("Ingrese los datos correctamente");
-    }
-}
-
-
-//ciclo para consultarle al usuario si quiere crear un usuario, o listar los que estan creados.
 while (creacion == "1" || creacion == "2") {
     switch (creacion) {
         case "1":
             crearUsuario();
             break;
         case "2":
-            for (i = 0; i < usuarios.length; i++) {
-                alert(`[ ` + usuarios[i].toString() + " ]\n");
-            }
+            usuarios.mostrar();
             break;
     }
-    creacion = prompt("Por favor ingrese 1 para registrar otro usuario, 2 para ver que usuarios hay registrados y cualquier otro digito para finalizar");
+    creacion = prompt("Por favor ingrese 1 para registrar otro Usuario, 2 para ver que Usuarios hay registrados y cualquier otro digito para finalizar");
 }
+function getIDFromStorage() {
+   let list = JSON.parse(localStorage.getItem("usuarios"));
+   if (list == null){
+       id = 0;
+   } else {
+   id = list.length;
+   }
+    return id;
+}
+
+function crearUsuario() {
+     try {
+    var nuevoUsuario = new Usuario();
+    id = getIDFromStorage() + 1;
+    nuevoUsuario.setUsuario(validateObject(prompt("Por favor ingrese su Usuario")));
+    nuevoUsuario.setContraseña(validateObject(prompt("Por favor ingrese su contraseña")));
+    nuevoUsuario.setNombre(validateString(validateObject(prompt("por favor ingrese su nombre (utilice solo letras)"))));
+    nuevoUsuario.setApellido(validateString(validateObject(prompt("pro favor ingrtese su apellido (utilice solo letras)"))));
+    nuevoUsuario.setEdad(prompt("Por favor ingrese su edad"));
+    nuevoUsuario.setID(id);
+    alert("Su Usuario fue creado correctamente");
+    var DTOUsuario = new usuarioDTO(nuevoUsuario);
+    usuarios.guardar(DTOUsuario);
+       } catch {
+         throw new Error("Ingrese los datos correctamente");
+    }
+}
+
+//metodo que protege data sensible como contraseña, nombre y apellido
 
 
 
 //funcion que valida que los datos ingresados sean validos.
 function validateObject(objectToValidate) {
     if (objectToValidate == null || objectToValidate == undefined || objectToValidate == 0) {
-        console.log(objectToValidate);
         alert("Por favor complete los campos correctamente");
         throw console.error("por favor complete los campos correctamente");
     } else if (typeof objectToValidate == "string" && objectToValidate !== "") {
@@ -130,3 +77,7 @@ function validateString(objectToValidate) {
         return objectToValidate;
     }
 }
+
+
+
+

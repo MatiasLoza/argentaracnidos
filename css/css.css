@@ -5,13 +5,20 @@
     --colorPrincipal: rgba(98, 110, 39, 0.678);
     --fuenteTitulo: "rampart one";
 }
-
 /* Modificadores */
-
+.div_resultado{
+    width: 60%;
+    margin: 0 auto;
+}
 .centrar {
     margin: 0 auto;
 }
-
+.result-font {
+    font-size: 3rem;
+    font-family: var(--fuenteTitulo);
+    color: var(--colorSecundario);
+    margin: 0 20%;    
+}
 .no-margin {
     margin: 0;
 }
