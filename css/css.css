@@ -6,19 +6,11 @@
     --fuenteTitulo: "rampart one";
 }
 /* Modificadores */
-.div_resultado{
-    width: 60%;
-    margin: 0 auto;
-}
+
 .centrar {
     margin: 0 auto;
 }
-.result-font {
-    font-size: 3rem;
-    font-family: var(--fuenteTitulo);
-    color: var(--colorSecundario);
-    margin: 0 20%;    
-}
+
 .no-margin {
     margin: 0;
 }
@@ -28,7 +20,16 @@
 }
 
 /* Globales */
-
+.result-font {
+    font-size: 3rem;
+    font-family: var(--fuenteTitulo);
+    color: var(--colorSecundario);
+    margin: 0 20%;    
+}
+.div_resultado{
+    width: 60%;
+    margin: 0 auto;
+}
 html {
     box-sizing: border-box;
     font-size: 62.5%;
