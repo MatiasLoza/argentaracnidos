@@ -13,13 +13,12 @@ export class Usuarios {
     mostrar() {
         const listContainer = document.getElementById("muestra__resultados");
         
-        for (let i = 0; i < this.userList.length; i++) {
+        for (let usuario of this.userList) {
             const itemList = document.createElement('li');
-            itemList.innerHTML = `<span>
+            itemList.innerHTML = `<p>
+                                     el usuario: ${usuario.usuario} tiene un id: ${usuario.id}
 
-                                         ${JSON.stringify(this.userList[i])} 
-
-                                  </span>`;
+                                  </p>`;
          listContainer.appendChild(itemList);
         }
 

@@ -38,26 +38,31 @@
     </header>
     <main class="main__formulario">
         <h2 class="col-md-8 main__formulario__titulo">Ingrese sus datos asi le enviamos mas informacion</h2>
-        <form class="row g-3 col-lg-8 centrar main__formulario__form">
+        <form id="form__usuarios" class="row g-3 col-lg-8 centrar main__formulario__form">
             <div class="col-md-6">
-                <label for="nombre" class="form-label main__formulario__label">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="nombre">
+                <label for="form__nombre"  class="form-label main__formulario__label">Nombre y Apellido</label>
+                <input id="form__inputNombre" type="text" class="form-control">
             </div>
             <div class="col-md-6">
-                <label for="email" class="form-label main__formulario__label">Email</label>
-                <input type="email" class="form-control" id="email">
+                <label for="form__email"  class="form-label main__formulario__label">Email</label>
+                <input id="form__inputEmail" type="email" class="form-control">
             </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label main__formulario__label">Domicilio</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Av.libertador 123">
-            </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label main__formulario__label">Provincia</label>
-                <input type="text" class="form-control" id="inputCity">
+            <div class="col-6">
+                <label for="form__inputUsuario"  class="form-label main__formulario__label">Usuario</label>
+                <input id="form__inputUsuario" type="text" class="form-control">
             </div>
             <div class="col-md-6">
-                <label for="telefono" class="form-label main__formulario__label">Telefono</label>
-                <input type="number" class="form-control" id="telefono">
+                <label for="form__contraseña"  class="form-label main__formulario__label">Contraseña</label>
+                <input id="form__inputContraseña" type="password" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label for="form__edad"  class="form-label main__formulario__label">Edad</label>
+                <input id="form__inputEdad" type="text" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="telefono"  class="form-label main__formulario__label">Telefono</label>
+                <input id="form__inputTelefono" type="number" class="form-control" id="telefono">
             </div>
             <div class="col-12">
                 <div class="form-check">
@@ -72,17 +77,17 @@
                     <button type="submit" class="btn btn-primary formulario__input__boton">Enviar</button>
                 </div>
                 <div>
-                    <button type="reset" class="btn btn-primary formulario__input__boton">Borrar</button>
+                    <a id="btn__mostrarResultados" class="btn btn-primary formulario__input__boton">Users</a>  <!-- href="users.html" -->
                 </div>
+            </div>
+            <div class="result-font div__resultado">
+                <ul id= "muestra__resultados">
+
+                </ul>
+
             </div>
         </form>
         </div>
-        <div class = "centrar div_resultado">
-            <ul id="muestra__resultados" class="result-font">
-                
-            </ul>
-        </div>
-
     </main>
     <footer class="footer">
         <div class="contenedor__barra">

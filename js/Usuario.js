@@ -3,8 +3,9 @@ export class Usuario {
         this.usuario;
         this.contraseña;
         this.nombre;
-        this.apellido;
         this.edad;
+        this.email;
+        this.telefono;
         this.id;
     }
 
@@ -28,18 +29,23 @@ export class Usuario {
     setNombre(nombre) {
         this.nombre = nombre;
     }
-
-    getApellido() {
-        return this.apellido;
-    }
-    setApellido(apellido) {
-        this.apellido = apellido;
-    }
     getEdad() {
         return this.edad;
     }
     setEdad(edad) {
         this.edad = edad;
+    }
+    getEmail(){
+        return this.email;
+    }
+    setEmail(email){
+        this.email = email;
+    }
+    getTelefono(){
+        return this.telefono;
+    }
+    setTelefono(telefono){
+        this.telefono = telefono;
     }
 
     setID(id) {
