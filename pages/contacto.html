@@ -40,29 +40,32 @@
         <h2 class="col-md-8 main__formulario__titulo">Ingrese sus datos asi le enviamos mas informacion</h2>
         <form id="form__usuarios" class="row g-3 col-lg-8 centrar main__formulario__form">
             <div class="col-md-6">
-                <label for="form__nombre"  class="form-label main__formulario__label">Nombre y Apellido</label>
-                <input id="form__inputNombre" type="text" class="form-control">
+                <label for="form__nombre" class="form-label main__formulario__label">Nombre</label>
+                <input title="Solo se pueden letras del abecedario" pattern="^[a-zA-Z0-9_ ]*$" id="form__inputNombre"
+                    type="text" class="form-control">
             </div>
             <div class="col-md-6">
-                <label for="form__email"  class="form-label main__formulario__label">Email</label>
+                <label for="form__email" class="form-label main__formulario__label">Email</label>
                 <input id="form__inputEmail" type="email" class="form-control">
             </div>
             <div class="col-6">
-                <label for="form__inputUsuario"  class="form-label main__formulario__label">Usuario</label>
+                <label for="form__inputUsuario" class="form-label main__formulario__label">Usuario</label>
                 <input id="form__inputUsuario" type="text" class="form-control">
             </div>
             <div class="col-md-6">
-                <label for="form__contraseña"  class="form-label main__formulario__label">Contraseña</label>
+                <label for="form__contraseña" class="form-label main__formulario__label">Contraseña</label>
                 <input id="form__inputContraseña" type="password" class="form-control">
             </div>
             <div class="col-md-6">
-                <label for="form__edad"  class="form-label main__formulario__label">Edad</label>
-                <input id="form__inputEdad" type="text" class="form-control">
+                <label for="form__edad" class="form-label main__formulario__label">Edad</label>
+                <input title="Se pueden poner 2 digitos nomas." pattern="^[0-9][0-9]" id="form__inputEdad" type="text"
+                    class="form-control">
             </div>
 
             <div class="col-md-6">
-                <label for="telefono"  class="form-label main__formulario__label">Telefono</label>
-                <input id="form__inputTelefono" type="number" class="form-control" id="telefono">
+                <label for="telefono" class="form-label main__formulario__label">Telefono</label>
+                <input title="011-xxxx-xxxx este es el formato a seguir, sin los guiones" pattern="^[\d{11}]"
+                    id="form__inputTelefono" type="number" class="form-control" id="telefono">
             </div>
             <div class="col-12">
                 <div class="form-check">
@@ -77,11 +80,12 @@
                     <button type="submit" class="btn btn-primary formulario__input__boton">Enviar</button>
                 </div>
                 <div>
-                    <a id="btn__mostrarResultados" class="btn btn-primary formulario__input__boton">Users</a>  <!-- href="users.html" -->
+                    <a href="users.html" id="userBottom" class="btn btn-primary formulario__input__boton">Users</a>
+                    <!-- href="users.html" -->
                 </div>
             </div>
             <div class="result-font div__resultado">
-                <ul id= "muestra__resultados">
+                <ul id="muestra__resultados">
 
                 </ul>
 
@@ -93,7 +97,7 @@
         <div class="contenedor__barra">
             <div class="barra">
                 <div class="header__logo footer">
-                    <a class="link" href="../index.html">
+                    <a target="_blank" class="link" href="../index.html">
                         <h2 class="logo">ArgentAracnidos</h2>
                     </a>
                 </div>
@@ -101,6 +105,8 @@
         </div>
     </footer>
     <script type="module" src="../js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 </body>
 
 </html>

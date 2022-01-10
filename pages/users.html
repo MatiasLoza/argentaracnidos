@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +15,36 @@
         rel="stylesheet">
     <title>usuarios</title>
 </head>
-<body> 
-    <div class="formulario__input__submit">
-        <div>
-            <button type="submit" class="btn btn-primary formulario__input__boton">eliminar</button>
+
+<body class="cuerpo">
+    <main>
+        <div class="formulario__input__submit" id="user__container">
+            <div id="user__container__buscador">
+                <div id="user_container__buscador__label">
+                    <label for="user__buscador" class="form-label main__formulario__label"
+                        id="user__label">buscador:</label>
+                    <input id="user__buscador" type="text" class="form-control">
+                </div>
+                <select id="user__container__buscador__select" name="select">
+                    <option value="value1" selected>Elija como buscar</option>
+                    <option value="value2">Por ID</option>
+                    <option value="value3">Por nombre de usuario</option>
+                </select>
+            </div>
+            <div id="user__container__buttons">
+                <button id="user__container__eliminar" type="submit"
+                    class="btn btn-primary formulario__input__boton">eliminar</button>
+                <button id="user__container__buscar" type="submit"
+                    class="btn btn-primary formulario__input__boton">buscar</button>
+
+            </div>
         </div>
-    </div>
+        <div id="user__mostrar_resultados" class="result-font div__resultado">
+
+        </div>
+    </main>
+    <script type="module" src="../js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </body>
+
 </html>

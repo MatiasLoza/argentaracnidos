@@ -1,5 +1,5 @@
 export class Usuarios {
-    constructor(lista) {
+    constructor() {
         this.userList = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 
@@ -10,18 +10,12 @@ export class Usuarios {
         localStorage.setItem("usuarios", JSON.stringify(this.userList));
     }
 
-    mostrar() {
-        const listContainer = document.getElementById("muestra__resultados");
-        
+    mostrarPorID() {
         for (let usuario of this.userList) {
-            const itemList = document.createElement('li');
-            itemList.innerHTML = `<p>
-                                     el usuario: ${usuario.usuario} tiene un id: ${usuario.id}
+            $('#user__mostrar_resultados').append(`<div class="div__muestra__resultados"><p class ="result-font">
+                                             el usuario: ${usuario.usuario} tiene un id: ${usuario.id}
 
-                                  </p>`;
-         listContainer.appendChild(itemList);
+                                             </p> </div>`)
         }
-
-
     }
 }
