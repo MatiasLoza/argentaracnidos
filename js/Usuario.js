@@ -35,16 +35,16 @@ export class Usuario {
     setEdad(edad) {
         this.edad = edad;
     }
-    getEmail(){
+    getEmail() {
         return this.email;
     }
-    setEmail(email){
+    setEmail(email) {
         this.email = email;
     }
-    getTelefono(){
+    getTelefono() {
         return this.telefono;
     }
-    setTelefono(telefono){
+    setTelefono(telefono) {
         this.telefono = telefono;
     }
 

@@ -1,0 +1,44 @@
+[
+    {
+        "nombre": "Matias",
+        "usuario": "IAmTheRock",
+        "contraseña": "contraseña1234",
+        "telefono": "5486165",
+        "id": 1
+    },
+    {
+        "nombre": "sebastian",
+        "usuario": "Sebas234",
+        "contraseña": "contraseña313",
+        "telefono": "5486165",
+        "id": 2
+    },
+    {
+        "nombre": "florencia",
+        "usuario": "Flor22",
+        "contraseña": "aisdhuj231",
+        "telefono": "0115454656",
+        "id": 3
+    },
+    {
+        "nombre": "vasco",
+        "usuario": "VascoButton",
+        "contraseña": "vasco1234",
+        "telefono": "0115485785",
+        "id": 4
+    },
+    {
+        "nombre": "ignacio",
+        "usuario": "NachoJs",
+        "contraseña": "nacho el aviador",
+        "telefono": "51458011",
+        "id": 5
+    },
+    {
+        "nombre": "gabriel",
+        "usuario": "SpeedRunner",
+        "contraseña": "la vieja confiable",
+        "telefono": "5145801141854",
+        "id": 6
+    }
+]

@@ -21,17 +21,7 @@
 }
 
 /* Globales */
-.result-font {
-    font-size  : 1.5rem;
-    font-family: var(--fuenteTitulo);
-    color      : var(--colorSecundario);
-    margin     : 0 20%;
-}
 
-.div__resultado {
-    width : 60%;
-    margin: 0 auto;
-}
 
 html {
     box-sizing : border-box;
@@ -731,18 +721,29 @@ legend {
 }
 
 #user__mostrar_resultados {
-    width                : 70%;
+    width                : 80%;
     margin               : 0 auto;
     display              : grid;
     grid-template-columns: 1fr 1fr;
-    gap                  : 1rem
+    gap                  : 1rem;
 }
 
 .div__muestra__resultados {
     border : 2px solid var(--colorSecundario);
     width  : 100%;
     padding: 1rem;
-    margin : 1rem
+    margin : 1rem;
+}
+.result-font {
+    font-size  : 2rem;
+    font-family: var(--fuenteTitulo);
+    color      : rgb(79, 209, 19);
+    margin     : 0 20%;
+}
+
+.div__resultado {
+    width : 60%;
+    margin: 0 auto;
 }
 
 /* Footer */
