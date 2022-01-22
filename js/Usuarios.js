@@ -69,12 +69,14 @@ export class Usuarios {
         for (let usuario of this.userList) {
             if (user == usuario.id) {
                 if (user !== -1) {
-                    this.userList.splice(usuario, user);
+                    let index  = this.userList.indexOf(usuario)
+                    this.userList.splice(index, 1);
                     localStorage.setItem("usuarios", JSON.stringify(this.userList));
                     break;
                 }
-            } else if (user.toLowerCase == usuario.usuario.toLowerCase()) {
-                this.userList.splice(usuario, user);
+            } else if (user.toLowerCase() == usuario.usuario.toLowerCase()) {
+                let index = this.userList.indexOf(usuario);
+                this.userList.splice(index, 1);
                 localStorage.setItem("usuarios", JSON.stringify(this.userList));
                 break;
             }
